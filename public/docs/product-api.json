@@ -1,0 +1,159 @@
+{
+    "openapi": "3.0.3",
+    "info": {
+        "title": "Product API E-Katalog",
+        "description": "Product API",
+        "version": "1.0.0"
+    },
+    "servers": [
+        {
+            "url": "http://localhost:8000"
+        }
+    ],
+    "paths": {
+        "/api/products": {
+            "get": {
+                "description": "Get all products",
+                "responses": {
+                    "200": {
+                        "description": "Success get all products",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "type": "object",
+                                        "properties": {
+                                            "productId": {
+                                                "type": "integer",
+                                                "example": 1
+                                            },
+                                            "productName": {
+                                                "type": "string",
+                                                "example": "Terralink"
+                                            },
+                                            "productDescription": {
+                                                "type": "string",
+                                                "example": "deskripsi singkat"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/products/{productId}": {
+            "get": {
+                "description": "Get product detail",
+                "parameters": [
+                    {
+                        "name": "productId",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        },
+                        "description": "ID dari produk"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success get product detail",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "data": {
+                                            "type": "object",
+                                            "properties": {
+                                                "productId": {
+                                                    "type": "integer",
+                                                    "example": 1
+                                                },
+                                                "productName": {
+                                                    "type": "string",
+                                                    "example": "Terralink"
+                                                },
+                                                "productDescription": {
+                                                    "type": "string",
+                                                    "example": "deskripsi singkat"
+                                                },
+                                                "devices": {
+                                                    "type": "array",
+                                                    "items": {
+                                                        "type": "object",
+                                                        "properties": {
+                                                            "deviceId": {
+                                                                "type": "integer",
+                                                                "example": 101
+                                                            },
+                                                            "deviceName": {
+                                                                "type": "string",
+                                                                "example": "standard"
+                                                            },
+                                                            "price": {
+                                                                "type": "number",
+                                                                "example": 30000000
+                                                            }
+                                                        }
+                                                    }
+                                                },
+                                                "capacities": {
+                                                    "type": "array",
+                                                    "items": {
+                                                        "type": "object",
+                                                        "properties": {
+                                                            "capacityId": {
+                                                                "type": "integer",
+                                                                "example": 201
+                                                            },
+                                                            "capacitySize": {
+                                                                "type": "integer",
+                                                                "example": 50
+                                                            },
+                                                            "price": {
+                                                                "type": "number",
+                                                                "example": 2000000
+                                                            }
+                                                        }
+                                                    }
+                                                },
+                                                "faqs": {
+                                                    "type": "array",
+                                                    "items": {
+                                                        "type": "object",
+                                                        "properties": {
+                                                            "faqId": {
+                                                                "type": "integer",
+                                                                "example": 301
+                                                            },
+                                                            "question": {
+                                                                "type": "string",
+                                                                "example": "Bagaimana cara membeli produk?"
+                                                            },
+                                                            "answer": {
+                                                                "type": "string",
+                                                                "example": "Silahkan hubungi sales."
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        },
+                                        "errors": {
+                                            "type": "object"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
