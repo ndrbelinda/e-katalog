@@ -1,4 +1,4 @@
-<footer class="bg-[#242134] p-6 mt-4">
+<footer class="bg-purple-800 text-white p-6 mt-4">
     <div class="container mx-auto text-center">
         <p>&copy; 2025 PT XYZ. All rights reserved.</p>
     </div>

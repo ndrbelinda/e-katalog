@@ -13,7 +13,7 @@
         }
     </style>
 </head>
-<body class="bg-black text-white min-h-screen flex flex-col">
+<body class="bg-white text-[#252525] min-h-screen flex flex-col">
 
     {{-- Navigation Bar --}}
     <x-navbar />
